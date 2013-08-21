@@ -89,8 +89,6 @@ def normalize_files(files_dir, num_digits):
         rename(fp, new_fp)
 
 
-
-
 # Call with generate_html(....,"vim %s +TOhtml '+w %s' '+qall!')
 def generate_html(files_dir, html_dir, cmd = GEN_HTML_CMD):
     files = [ f for f in listdir(files_dir) if isfile(join(files_dir, f)) ]
@@ -123,30 +121,6 @@ def create_dir(d):
         makedirs(d)
     except FileExistsError:
         pass
-
-
-def run(patch_dir, output_dir):
-    # files_dir = join(output_dir, "files")
-    # html_dir = join(output_dir, "html")
-    # images_dir = join(output_dir, "images")
-    # video_dir = join(output_dir, "video")
-
-    # # Create dirs
-    # create_dir(output_dir)
-    # [create_dir(x) for x in [files_dir, html_dir, images_dir, video_dir]]
-
-
-    # Step 1: generate files and format them
-    generate_files(patch_dir, files_dir)
-
-    # Step 2: generate html
-    generate_html(files_dir, html_dir)
-
-    # Step 3: generate images
-    # generate_images(html_dir, images_dir)
-
-    # Step 4: generate video
-    # generate_video(images_dir, video_dir)
 
 
 def file_to_string(fp):
