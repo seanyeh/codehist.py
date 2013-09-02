@@ -1,0 +1,39 @@
+codehist.py
+
+Tool to generate visualizations of source code (or any kind of text file)
+history.
+
+Demo: http://codehistdemo.seanyeh.com
+
+Dependencies:
+    python3 (python2 might work with minimal/no changes, though I haven't tried it)
+    patch
+    vim (for converting source code -> html)
+    wkhtmltoimage (optional: for converting to image)
+    ffmpeg (optional: for converting to video)
+
+Usage:
+Probably the easiest way to use this is to first generate incremental patch
+files of the file history using the vim plugin codehist.vim
+(https://github.com/seanyeh/codehist.vim), assuming you use vim.
+
+Run:
+    python codehist.py DIR_WITH_DIFFS OUTPUT_DIR
+
+
+codehist.py will turn your diffs -> files (an individual file for each history
+'version') -> html -> JSON. This JSON file has all the data for each version of the
+history, and can be used with some html/javascript to produce a simple
+visualizer. An example of such a visualizer can be found in the examples
+directory, or see http://codehistdemo.seanyeh.com for a demo visualization
+of the history of codehist.py :)
+
+
+Currently, the conversion from files -> html is done by vim's TOhtml because I
+am happy with my current vim color scheme, but using a different syntax
+highlighting tool such as pygments could probably be done with some minor
+changes.
+
+codehist.py can also generate images of each frame and a video of the history,
+though the results are not as nice for files with many lines (because the video
+would have a really large height).
