@@ -174,8 +174,10 @@ def main():
 
     parser.add_argument('input_dir')
     parser.add_argument('output_dir')
-    parser.add_argument('--input-type', default='diffs')
-    parser.add_argument('--output-type', default='json')
+    parser.add_argument('--input-type', default='diffs',
+            help="Possible types: 'diffs', 'files', or 'html'. Default: 'diffs'")
+    parser.add_argument('--output-type', default='json',
+            help="Possible types: 'files', 'html', or 'json'. Default: 'json'")
 
     args = parser.parse_args()
 
