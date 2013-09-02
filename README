@@ -18,15 +18,15 @@ files of the file history using the vim plugin codehist.vim
 (https://github.com/seanyeh/codehist.vim), assuming you use vim.
 
 Run:
-    python codehist.py DIR_WITH_DIFFS OUTPUT_DIR
+    python codehist.py DIFFS_DIRECTORY OUTPUT_DIRECTORY
 
 
 codehist.py will turn your diffs -> files (an individual file for each history
-'version') -> html -> JSON. This JSON file has all the data for each version of the
-history, and can be used with some html/javascript to produce a simple
+'version') -> html -> JSON. This JSON file has all the data for each version of
+the history, and can be used with some html/javascript to produce a simple
 visualizer. An example of such a visualizer can be found in the examples
-directory, or see http://codehistdemo.seanyeh.com for a demo visualization
-of the history of codehist.py :)
+directory, or see http://codehistdemo.seanyeh.com for a demo visualization of
+the history of codehist.py :)
 
 
 Currently, the conversion from files -> html is done by vim's TOhtml because I
